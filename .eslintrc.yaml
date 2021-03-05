@@ -1,0 +1,77 @@
+env:
+  browser: true
+  es6: true
+  jest: true
+extends:
+  - "plugin:@typescript-eslint/recommended"
+  - "plugin:react/recommended"
+  - "plugin:prettier/recommended"
+parser: "@typescript-eslint/parser"
+parserOptions:
+  sourceType: module
+plugins:
+  - "@typescript-eslint"
+  - "import"
+  - "prettier"
+  - "react"
+  - "react-hooks"
+  - "unused-imports"
+rules:
+  "@typescript-eslint/camelcase": off
+  "@typescript-eslint/explicit-function-return-type": off
+  "@typescript-eslint/explicit-member-accessibility":
+    - error
+    - accessibility: explicit
+      overrides:
+        constructors: no-public
+  "@typescript-eslint/member-delimiter-style": off
+  "@typescript-eslint/no-explicit-any": off
+  "@typescript-eslint/no-inferrable-types": off
+  "@typescript-eslint/no-require-imports": error
+  "@typescript-eslint/no-unused-vars": off
+  "@typescript-eslint/no-use-before-define": off
+  "eol-last": error
+  "import/no-unresolved":
+    - error
+    - ignore:
+        - "^src"
+  "no-console": warn
+  "no-unused-vars": off
+  "prettier/prettier":
+    - error
+    - printWidth: 100
+      semi: false
+      singleQuote: true
+      tabWidth: 2
+      trailingComma: all
+  "react-hooks/exhaustive-deps": off
+  "react-hooks/rules-of-hooks": warn
+  "react/display-name": off
+  "react/sort-comp":
+    - error
+    - order:
+        - instance-variables
+        - instance-methods
+        - getters
+        - everything-else
+  "react/jsx-boolean-value":
+    - error
+    - always
+  "react/jsx-pascal-case": off
+  "react/prop-types": off
+  strict:
+    - error
+    - global
+settings:
+  "import/resolver":
+    node:
+      extensions:
+        - ".js"
+        - ".jsx"
+        - ".ts"
+        - ".tsx"
+  react:
+    version: detect
+  typescript:
+    directory:
+      - "./**/tsconfig.json"
